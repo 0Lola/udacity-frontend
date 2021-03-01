@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment #  Deployment or Service
+metadata:
+  name: udacity-frontend
+  labels:
+    app: udacity-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: udacity-frontend
+  template:
+    metadata:
+      labels:
+        app: udacity-frontend
+    spec:
+      containers: # Docker image source
+      - name: udacity-frontend
+        image: zxa011023/udacity-frontend
+        ports:
+        - containerPort: 8100
