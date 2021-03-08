@@ -4,6 +4,10 @@ metadata:
   name: udacity-frontend
   labels:
     run: udacity-frontend
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
 spec:
   ports:
   - port: 8100
