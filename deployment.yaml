@@ -4,15 +4,18 @@ metadata:
   name: udacity-frontend
   labels:
     app: udacity-frontend
+    app.kubernetes.io/name: load-balancer-frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: udacity-frontend
+      app.kubernetes.io/name: load-balancer-frontend
   template:
     metadata:
       labels:
         app: udacity-frontend
+        app.kubernetes.io/name: load-balancer-frontend
     spec:
       containers: # Docker image source
       - name: udacity-frontend
