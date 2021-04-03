@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpRequest, HttpEvent } from '@angular/common
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
-const API_HOST= environment.apiHost;
+const API_HOST= `${environment.apiHost}:8080/api/v0`;
 
 
 @Injectable({
@@ -63,8 +63,9 @@ export class ApiService {
 
   async upload(endpoint: string, file: File, payload: any): Promise<any> {
     const signed_url = (await this.get(`${endpoint}/signed-url/${file.name}`)).url;
+    console.log('signed url : '+ signed_url);
+    const headers = new HttpHeaders({'Content-Type': file.type,'Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'});
 
-    const headers = new HttpHeaders({'Content-Type': file.type});
     const req = new HttpRequest( 'PUT', signed_url, file,
                                   {
                                     headers: headers,

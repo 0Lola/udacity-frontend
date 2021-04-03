@@ -18,4 +18,4 @@ spec:
       - name: udacity-frontend
         image: zxa011023/udacity-frontend
         ports:
-        - containerPort: 8100
+        - containerPort: 4200

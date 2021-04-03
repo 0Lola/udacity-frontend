@@ -19,7 +19,7 @@ RUN npm install
 # add app
 COPY . /usr/src/app
 
-EXPOSE 8100
+EXPOSE 4200
 
 CMD ["ionic","build"]
-CMD ["ionic","serve","--address", "0.0.0.0","--disable-host-check"]
+CMD ["ionic","serve","--address", "0.0.0.0"]
