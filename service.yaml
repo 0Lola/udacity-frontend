@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service #  Deployment or Service
 metadata:
-  name: udacity-frontend
+  name: udacity-api-frontend
   labels:
-    run: udacity-frontend
+    run: udacity-api-frontend
 spec:
   ports:
   - port: 8100
     protocol: TCP
   selector:
-    run: udacity-frontend
+    run: udacity-api-frontend
