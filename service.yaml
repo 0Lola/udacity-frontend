@@ -6,7 +6,7 @@ metadata:
     run: udacity-frontend
 spec:
   ports:
-  - port: 4200
+  - port: 8100
     protocol: TCP
   selector:
     run: udacity-frontend

@@ -4,6 +4,8 @@ import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
 const API_HOST= `${environment.apiHost}:8080/api/v0`;
+// const API_HOST= `http://localhost:8080/api/v0`;
+
 
 
 @Injectable({
@@ -11,7 +13,7 @@ const API_HOST= `${environment.apiHost}:8080/api/v0`;
 })
 export class ApiService {
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/json','Access-Control-Allow-Origin': `*`,'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'})
   };
 
   token: string;
