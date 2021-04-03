@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 const API_HOST= environment.apiHost;
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -47,6 +48,8 @@ export class ApiService {
               throw e;
             });
   }
+
+
 
   post(endpoint, data): Promise<any> {
     const url = `${API_HOST}${endpoint}`;

@@ -22,4 +22,4 @@ COPY . /usr/src/app
 EXPOSE 8100
 
 CMD ["ionic","build"]
-CMD ["ionic","serve","--address", "0.0.0.0"]
+CMD ["ionic","serve","--address", "0.0.0.0","--disable-host-check"]
